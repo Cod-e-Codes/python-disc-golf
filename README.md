@@ -1,7 +1,5 @@
 # Disc Golf Caddy and Mapper
 
-![App Screenshot](screenshot1.png)
-
 Disc Golf Caddy and Mapper is a web application designed to assist disc golf players by providing advice on the best disc and throwing technique based on the selected hole and its characteristics. The app utilizes Flask for the backend, Tailwind CSS for styling, and JavaScript for interactivity. It also integrates Leaflet.js for mapping functionalities.
 
 ## Features
