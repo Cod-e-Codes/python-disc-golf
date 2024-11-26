@@ -30,7 +30,7 @@ Disc Golf Caddy and Mapper is a web application designed to assist disc golf pla
 
 ## Screenshots 📸
 
-1. **Disc Golf Map**
+1. **Disc Golf Map**  
    <img src="./screenshot1.png" alt="Disc Golf Map" width="600"/>
 
    This screenshot showcases the interactive map interface with selectable holes, disc types, and personalized advice for players.
