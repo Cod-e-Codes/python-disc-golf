@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disc Golf Caddy</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tailwind.css') }}" />
+    <style>
+        /* Ensure Leaflet map container has a height */
+        #map {
+            min-height: 400px;
+        }
+    </style>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-4 text-center">Disc Golf Caddy and Mapper</h1>
+
+        <div id="map" class="mb-8 shadow-md rounded-lg"></div>
+
+        <div class="flex flex-wrap items-center justify-between mb-4">
+            <div class="w-full md:w-1/2 mb-4 md:mb-0 md:pr-4">
+                <label for="holeSelect" class="block text-lg font-bold mb-2">Select a Hole</label>
+                <select id="holeSelect" class="block w-full p-2 border border-gray-300 rounded">
+                    {% for hole in holes %}
+                    <option value="{{ hole.hole }}">Hole {{ hole.hole }} (Par: {{ hole.par }}, Distance: {{
+                        hole.distance }} ft) - {{ hole.obstacles }} Elevation Change: {{ hole.elevation_change }} ft
+                        Direction: {{ hole.direction }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="w-full md:w-1/2">
+                <label for="discSelect" class="block text-lg font-bold mb-2">Select Disc Type</label>
+                <select id="discSelect" class="block w-full p-2 border border-gray-300 rounded">
+                    <option value="driver">Driver</option>
+                    <option value="mid-range">Mid-Range</option>
+                    <option value="putter">Putter</option>
+                </select>
+            </div>
+        </div>
+
+        <button id="getAdvice"
+            class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded shadow-md transition duration-300">Get
+            Advice</button>
+
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-2">Advice</h2>
+            <p id="adviceText" class="text-lg"></p>
+        </div>
+    </div>
+
+    <!-- Inject holes data into the JavaScript context -->
+    <script>
+        var holesData = JSON.parse('{{ holes_json | safe }}');
+    </script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+
+</html>

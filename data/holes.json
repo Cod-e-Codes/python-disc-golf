@@ -1,0 +1,52 @@
+[
+    {
+        "hole": 1,
+        "par": 3,
+        "distance": 250,
+        "obstacles": [
+            "trees"
+        ],
+        "lat": 51.505,
+        "lng": -0.09,
+        "elevation_change": 10,
+        "direction": "straight"
+    },
+    {
+        "hole": 2,
+        "par": 4,
+        "distance": 350,
+        "obstacles": [
+            "bushes",
+            "hill"
+        ],
+        "lat": 51.506,
+        "lng": -0.091,
+        "elevation_change": -5,
+        "direction": "right"
+    },
+    {
+        "hole": 3,
+        "par": 3,
+        "distance": 280,
+        "obstacles": [
+            "water"
+        ],
+        "lat": 51.507,
+        "lng": -0.092,
+        "elevation_change": 0,
+        "direction": "left"
+    },
+    {
+        "hole": 4,
+        "par": 5,
+        "distance": 500,
+        "obstacles": [
+            "trees",
+            "bushes"
+        ],
+        "lat": 51.508,
+        "lng": -0.093,
+        "elevation_change": 15,
+        "direction": "straight"
+    }
+]
